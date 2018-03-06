@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "moo": "^0.4.3",
-    "nearley": "^2.12.1"
+    "nearley": "2.11.1"
   }
 }

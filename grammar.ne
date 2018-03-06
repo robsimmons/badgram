@@ -6,7 +6,9 @@ const mooLexer = require('moo').compile({
         match: /[a-z][a-zA-Z0-9_]*/,
         keywords: { keyword: ['fn', 'tfn', 'match', 'ifz', 'forall', 'exists'] }
     },
-    sig: 'SIG',
+    lparen: '(',
+    rparen: ')',
+    sig: 'SIG'
 });
 
 %}
@@ -15,9 +17,9 @@ const mooLexer = require('moo').compile({
 
 Main    -> _ Tp0 _
 
-Tp1     -> %ident
+Tp1     -> %ident          {% id %}
          | "(" _ Tp0 _ ")"
 
-Tp0      -> Tp1
+Tp0      -> Tp1            {% id %}
 
 _       -> %space | null
